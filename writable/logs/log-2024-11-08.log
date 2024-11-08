@@ -1,0 +1,337 @@
+CRITICAL - 2024-11-08 03:38:43 --> ParseError: syntax error, unexpected token "<"
+[Method: GET, Route: u7]
+in APPPATH\Views\DB_Connect.php on line 3.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('DB_Connect', [], true)
+ 3 APPPATH\Controllers\u7.php(23): view('DB_Connect', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\u7->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\u7))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 03:39:00 --> ParseError: syntax error, unexpected token "<"
+[Method: GET, Route: u7]
+in APPPATH\Views\DB_Connect.php on line 3.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('DB_Connect', [], true)
+ 3 APPPATH\Controllers\u7.php(23): view('DB_Connect', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\u7->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\u7))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 03:39:27 --> ParseError: syntax error, unexpected token "<"
+[Method: GET, Route: u7]
+in APPPATH\Views\DB_Connect.php on line 3.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('DB_Connect', [], true)
+ 3 APPPATH\Controllers\u7.php(23): view('DB_Connect', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\u7->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\u7))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 03:39:49 --> ParseError: syntax error, unexpected token "foreach", expecting "," or ";"
+[Method: GET, Route: u7]
+in APPPATH\Views\DB_Connect.php on line 5.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('DB_Connect', [], true)
+ 3 APPPATH\Controllers\u7.php(23): view('DB_Connect', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\u7->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\u7))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 04:12:35 --> Error: Object of class stdClass could not be converted to string
+[Method: GET, Route: u7]
+in SYSTEMPATH\View\Parser.php on line 266.
+ 1 SYSTEMPATH\View\Parser.php(143): CodeIgniter\View\Parser->parse('&lt;?php 
+echo \'<Br>\';
+echo \'目前所有學生: \';
+foreach($studenttttt as $studen)
+{
+    echo $studen->student_name. \'、\' ;
+} 
+?&gt;
+', [...], null)
+ 2 APPPATH\Controllers\u7.php(21): CodeIgniter\View\Parser->render('DB_Connect.php')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\u7->index()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\u7))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 04:16:01 --> Error: Call to undefined method CodeIgniter\View\Parser::setDatajson_encode()
+[Method: GET, Route: u7]
+in APPPATH\Controllers\u7.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\u7->index()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\u7))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 05:18:51 --> ErrorException: Undefined variable $POSTModel
+[Method: GET, Route: u7]
+in APPPATH\Controllers\u7.php on line 17.
+ 1 APPPATH\Controllers\u7.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $POSTModel', 'C:\\xampp\\htdocs\\u8\\app\\Controllers\\u7.php', 17)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\u7->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\u7))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 05:20:07 --> Error: Class "Student" not found
+[Method: GET, Route: u7]
+in APPPATH\Controllers\u7.php on line 60.
+ 1 APPPATH\Controllers\u7.php(10): App\Controllers\u7->modeling('Student')
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\u7->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 05:21:34 --> ParseError: syntax error, unexpected token "<", expecting end of file
+[Method: GET, Route: u7]
+in APPPATH\Views\DB_Connect.php on line 2.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('DB_Connect', [], true)
+ 3 APPPATH\Controllers\u7.php(22): view('DB_Connect', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\u7->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\u7))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 05:26:16 --> Error: Call to undefined method CodeIgniter\View\View::endection()
+[Method: GET, Route: u7]
+in APPPATH\Views\DB_Connect.php on line 5.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('DB_Connect', [], true)
+ 4 APPPATH\Controllers\u7.php(22): view('DB_Connect', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\u7->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\u7))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 05:37:06 --> ParseError: syntax error, unexpected token "endforeach", expecting end of file
+[Method: GET, Route: u7]
+in APPPATH\Views\Layouts\base.php on line 73.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\View\View.php(250): CodeIgniter\View\View->render('Layouts/base', [], true)
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('DB_Connect', [], true)
+ 4 APPPATH\Controllers\u7.php(21): view('DB_Connect', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\u7->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\u7))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 05:39:19 --> TypeError: strlen(): Argument #1 ($string) must be of type string, stdClass given
+[Method: GET, Route: u7]
+in APPPATH\Views\Layouts\base.php on line 72.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\View\View.php(250): CodeIgniter\View\View->render('Layouts/base', [], true)
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('DB_Connect', [], true)
+ 5 APPPATH\Controllers\u7.php(21): view('DB_Connect', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\u7->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\u7))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 05:52:31 --> ErrorException: Undefined variable $count
+[Method: GET, Route: u7]
+in APPPATH\Views\Layouts\base.php on line 75.
+ 1 APPPATH\Views\Layouts\base.php(75): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $count', 'C:\\xampp\\htdocs\\u8\\app\\Views\\Layouts\\base.php', 75)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\u8\\app\\Views\\Layouts\\base.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(250): CodeIgniter\View\View->render('Layouts/base', [], true)
+ 5 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('DB_Connect', [], true)
+ 6 APPPATH\Controllers\u7.php(21): view('DB_Connect', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\u7->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\u7))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 05:52:58 --> ParseError: syntax error, unexpected token "=", expecting "," or ";"
+[Method: GET, Route: u7]
+in APPPATH\Views\Layouts\base.php on line 71.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\View\View.php(250): CodeIgniter\View\View->render('Layouts/base', [], true)
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('DB_Connect', [], true)
+ 4 APPPATH\Controllers\u7.php(21): view('DB_Connect', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\u7->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\u7))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 05:53:21 --> ErrorException: Undefined variable $count
+[Method: GET, Route: u7]
+in APPPATH\Views\Layouts\base.php on line 75.
+ 1 APPPATH\Views\Layouts\base.php(75): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $count', 'C:\\xampp\\htdocs\\u8\\app\\Views\\Layouts\\base.php', 75)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\u8\\app\\Views\\Layouts\\base.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(250): CodeIgniter\View\View->render('Layouts/base', [], true)
+ 5 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('DB_Connect', [], true)
+ 6 APPPATH\Controllers\u7.php(21): view('DB_Connect', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\u7->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\u7))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 05:53:54 --> ErrorException: Undefined variable $count
+[Method: GET, Route: u7]
+in APPPATH\Views\Layouts\base.php on line 75.
+ 1 APPPATH\Views\Layouts\base.php(75): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $count', 'C:\\xampp\\htdocs\\u8\\app\\Views\\Layouts\\base.php', 75)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\u8\\app\\Views\\Layouts\\base.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(250): CodeIgniter\View\View->render('Layouts/base', [], true)
+ 5 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('DB_Connect', [], true)
+ 6 APPPATH\Controllers\u7.php(21): view('DB_Connect', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\u7->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\u7))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 05:53:56 --> ErrorException: Undefined variable $count
+[Method: GET, Route: u7]
+in APPPATH\Views\Layouts\base.php on line 75.
+ 1 APPPATH\Views\Layouts\base.php(75): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $count', 'C:\\xampp\\htdocs\\u8\\app\\Views\\Layouts\\base.php', 75)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\u8\\app\\Views\\Layouts\\base.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(250): CodeIgniter\View\View->render('Layouts/base', [], true)
+ 5 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('DB_Connect', [], true)
+ 6 APPPATH\Controllers\u7.php(21): view('DB_Connect', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\u7->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\u7))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 05:55:50 --> Error: Undefined constant "count"
+[Method: GET, Route: u7]
+in APPPATH\Views\Layouts\base.php on line 75.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\View\View.php(250): CodeIgniter\View\View->render('Layouts/base', [], true)
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('DB_Connect', [], true)
+ 5 APPPATH\Controllers\u7.php(21): view('DB_Connect', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\u7->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\u7))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 05:56:50 --> ParseError: Unmatched '}'
+[Method: GET, Route: u7]
+in APPPATH\Views\Layouts\base.php on line 82.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\View\View.php(250): CodeIgniter\View\View->render('Layouts/base', [], true)
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('DB_Connect', [], true)
+ 4 APPPATH\Controllers\u7.php(21): view('DB_Connect', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\u7->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\u7))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 06:45:31 --> ParseError: syntax error, unexpected token "}"
+[Method: GET, Route: u7]
+in APPPATH\Controllers\u7.php on line 25.
+ 1 SYSTEMPATH\Router\Router.php(563): CodeIgniter\Router\AutoRouter->getRoute('u7', 'GET')
+ 2 SYSTEMPATH\Router\Router.php(228): CodeIgniter\Router\Router->autoRoute('u7')
+ 3 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('u7')
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 06:45:40 --> ErrorException: require_once(C:\xampp\htdocs\u8\app\Models/StudentModel.php): Failed to open stream: No such file or directory
+[Method: GET, Route: u7]
+in APPPATH\Controllers\u7.php on line 53.
+ 1 APPPATH\Controllers\u7.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require_once(C:\\xampp\\htdocs\\u8\\app\\Models/StudentModel.php): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\u8\\app\\Controllers\\u7.php', 53)
+ 2 APPPATH\Controllers\u7.php(53): require_once()
+ 3 APPPATH\Controllers\u7.php(10): App\Controllers\u7->modeling('StudentModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\u7->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 06:49:53 --> Error: Class "Model" not found
+[Method: GET, Route: u7]
+in APPPATH\Models\StudentModel.php on line 4.
+ 1 APPPATH\Controllers\u7.php(52): require_once()
+ 2 APPPATH\Controllers\u7.php(10): App\Controllers\u7->modeling('StudentModel')
+ 3 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\u7->__construct()
+ 4 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 06:50:02 --> Error: Class "Models" not found
+[Method: GET, Route: u7]
+in APPPATH\Models\StudentModel.php on line 4.
+ 1 APPPATH\Controllers\u7.php(52): require_once()
+ 2 APPPATH\Controllers\u7.php(10): App\Controllers\u7->modeling('StudentModel')
+ 3 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\u7->__construct()
+ 4 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 06:50:15 --> ErrorException: Access level to StudentModel::$db must be protected (as in class CodeIgniter\BaseModel) or weaker
+[Method: GET, Route: u7]
+in APPPATH\Models\StudentModel.php on line 4.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-11-08 08:02:49 --> ErrorException: Array to string conversion
+[Method: GET, Route: u7]
+in APPPATH\Controllers\u7.php on line 27.
+ 1 APPPATH\Controllers\u7.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\u8\\app\\Controllers\\u7.php', 27)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\u7->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\u7))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 08:03:09 --> ErrorException: Array to string conversion
+[Method: GET, Route: u7]
+in APPPATH\Controllers\u7.php on line 27.
+ 1 APPPATH\Controllers\u7.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\u8\\app\\Controllers\\u7.php', 27)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\u7->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\u7))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 08:03:10 --> ErrorException: Array to string conversion
+[Method: GET, Route: u7]
+in APPPATH\Controllers\u7.php on line 27.
+ 1 APPPATH\Controllers\u7.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\u8\\app\\Controllers\\u7.php', 27)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\u7->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\u7))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-08 08:05:39 --> TypeError: strlen(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: u7]
+in APPPATH\Controllers\u7.php on line 27.
+ 1 APPPATH\Controllers\u7.php(27): strlen([])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\u7->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\u7))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
