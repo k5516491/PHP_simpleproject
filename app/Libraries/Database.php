@@ -14,7 +14,6 @@ class Database
             PDO::ATTR_PERSISTENT => true, //持續連接
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         );
-
         try
         {
             $this->dbh = new PDO($dsn, $this->user, $this->pass, $options);

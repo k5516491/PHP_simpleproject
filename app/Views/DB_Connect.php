@@ -8,7 +8,8 @@
     <input type="submit" name="AddButton" value="新增" >
     <p>目前的所有學生: 
         <?php $count = 0; 
-        foreach($studenttttt as $studen){ 
+        //這裡是以string被傳入不知道怎麼拿count，所以土法煉鋼自己寫了counter
+        foreach($studenttttt as $studen){  
             $count+=1 ;} 
         foreach($studenttttt as $studen){ 
             if($count>1)
@@ -17,7 +18,7 @@
                 }
             else
                 {
-                    echo $studen->student_name ;
+                    echo $studen->student_name ; //輸出的最後一個學生後面不用加頓號
                 } 
             $count-=1 ;
             }
