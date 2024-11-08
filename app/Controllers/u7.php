@@ -4,36 +4,52 @@ require_once(dirname(dirname(__file__)).'\bootstrap.php');
 
 class u7 extends \CodeIgniter\Controller
 { 
+    public $session ;
     public function __construct()
     {
         //呼叫modeling這個Function來初始model/StudentModel.php
         $this->StudentModel = $this -> modeling(model: "StudentModel");
-        //呼叫form_helper
-        helper("form");
+        helper("form"); //呼叫form_helper
+        $this -> session = \config\Services::session(); //使用session
     }
     public function index ()
     {
+        //$_POST = http回傳的值
+        
         $T_Student = $this->StudentModel-> get_StudentList(); //這裡已經從資料庫抓到資料
         $data = [
             'studenttttt' => $T_Student
         ];
         echo view('DB_Connect' , $data) ;
-        $NewStudent = $this -> request-> getVar("studentname"); //從網頁新增按鈕觸發回傳新生名字
-        $Check = $this->StudentModel-> CheckDulpicate($NewStudent) ;
-        if (count($Check)>0) { //輸入重複學生
-            echo "已經有重複的學生資料";
-            header("Location: http://localhost/u8/u7"); //直接F5
-        }
-        else if($NewStudent!= null) //輸入不為空，寫入新生至資料庫
-        {
+        if($this ->request->getMethod() == 'POST') //按下按鈕http回傳資料=post
+        {  
+            $NewStudent = $this -> request-> getVar("studentname"); //從網頁InputBox回傳新生名字
+            if ($NewStudent== null) { //輸入為空字串，直接跳訊息return
+                $this -> session ->setTempdata("error","請輸入新生姓名",1);
+                return redirect() ->to(current_url());
+            }
+            $Check = $this->StudentModel-> CheckDulpicate($NewStudent) ; //進資料庫查看是否重複
+            if(count($Check)>0) //輸入重複資料，顯示提示訊息
+            {
+                $this -> session ->setTempdata("errorD","學生:$NewStudent 重複輸入，請再次檢查",1);
+                return redirect() ->to(current_url());
+            }
+            else //有效的新資料，可以寫進資料庫
+            {
             $this -> StudentModel -> New_Student($NewStudent);
+            $this -> session ->setTempdata("success","新生: $NewStudent 已成功輸入",1);
+            return redirect() ->to(current_url());
+            }
+        }
+
+        //$Check = $this->StudentModel-> CheckDulpicate($NewStudent) ;
+        /*if(count($Check)>0) //輸入重複資料，顯示提示訊息
+        {
+            echo "請輸入新生資料";
             header("Location: http://localhost/u8/u7"); //直接F5
             exit();
         }
-        else //輸入為空
-        {
-            echo "請輸入新生資料";
-        }
+        */
 
         /*最初的資料庫寫法
         //------------------------------------------------------

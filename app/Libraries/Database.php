@@ -8,7 +8,7 @@ class Database
     private $error;
     public function __construct()
     {
-        echo"DATABASE __construct from app/libraies" ;
+        //echo"DATABASE __construct from app/libraies" ;
         $dsn = 'mysql:host=localhost'. ';dbname=u7_20241023;';
         $options = array(
             PDO::ATTR_PERSISTENT => true, //持續連接
@@ -16,7 +16,7 @@ class Database
         );
         try
         {
-            $this->dbh = new PDO($dsn, $this->user, $this->pass, $options);
+            $this->dbh = new PDO(dsn: $dsn, username: $this->user, password: $this->pass, options: $options);
         }
         catch(PDOException $e)
         {

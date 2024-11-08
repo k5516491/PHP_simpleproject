@@ -54,12 +54,11 @@ body {
 
 <body>
 <div class="topnav">
-  <a href="#">測試Topnav</a>
+  <a href="#">在學生資料表新增一名學生</a>
 </div>
 <body>
 
 <?= $this->renderSection("content"); ?>
-<div class="content1">
 
 
 
