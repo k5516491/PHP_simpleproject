@@ -35,7 +35,7 @@ abstract class BaseController extends Controller
      *
      * @var list<string>
      */
-    protected $helpers = [];
+    protected $helpers = ['form'];  #可以直接autoload helper
 
     /**
      * Be sure to declare properties for any property fetch you initialized.
