@@ -1,5 +1,6 @@
 <?= $this -> extend("layouts/base") ?>
 <?= $this -> section("content") ?> 
+<title>文章上傳系統</title>
 <!--------------------------------------------------->
 <!--errors Section-->
 <?php 

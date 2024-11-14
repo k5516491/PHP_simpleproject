@@ -1,5 +1,6 @@
 <?= $this -> extend("layouts/base") ?>
 <?= $this -> section("content") ?> 
+<title>文章上傳系統</title>
 <?= form_open("Article/create") ?>
         <label for="title">文章標題</label>
         <input type="text" id="Title" name="Title">
