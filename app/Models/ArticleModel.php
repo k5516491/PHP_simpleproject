@@ -6,6 +6,7 @@ use CodeIgniter\Model;
 class ArticleModel extends Model
 {
     protected $table = "article"; //代表使用Article這張表
+    protected $returnType = \App\Entities\ArticleEntity::class;
 
     //-------------------------------------------------------------
     //從Controller要使用到Model的insert、Update需添加進$allowedFields，

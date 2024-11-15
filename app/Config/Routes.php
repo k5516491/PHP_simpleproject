@@ -7,5 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->setAutoRoute(true);
-$routes->get("/article", "Article::show");
+$routes->get("/article", "Article::index");
+$routes->get("/article/(:num)", "Article::show/$1");
 $routes->post("article/create","Article::create");
+//$routes->post("article/Update/(:num)","Article::show/$1");

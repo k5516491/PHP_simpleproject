@@ -1,4 +1,5 @@
 *.json
+ci_session*
 ##### Windows
 # Windows thumbnail cache files
 Thumbs.db
