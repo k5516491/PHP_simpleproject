@@ -19,7 +19,10 @@
 
         <label for="content">內容</label>
         <textarea id="content" name="Content" ><?= $data->Content?></textarea> <!--TextArea沒有Value old()用法有差 -->
-        <button>修改</button>
+
+        <button >修改</button>
+        
+        <a href="<?= url_to("Article::Delete") ?>"> <button name="But_Delete">刪除</button> </a>
 <?= $this -> endsection() ?> 
 
 
