@@ -15,13 +15,12 @@ class Article extends BaseController
     }
     public function index() //主頁面，顯示所有文章
     {
+        //$this -> sendTestMail();  //測試Mail是否正常
+        if (session("magicLogin"))
+        {
+            return redirect() -> to("set-password")-> with("UpdatePWBy_MagicLogin","請變更為新密碼") ; 
+        }
         $data = $this->model-> findall();
-        //dd($data1);
-        /*if(count($data)>0) {
-        $NewestID = $data[count($data)-1]["id"];
-        session()->set("NewestID","$NewestID"); //等等新增文章時可以提供使用者編號
-        }*/
-
         return view("Article/index",["data"=>$data]);
     }
     public function show($id)  //進入編輯頁面
@@ -76,7 +75,7 @@ class Article extends BaseController
         }  
         return redirect() -> to("article/Update/$id")-> with("UpdateErrors",$this->model->errors())->withInput() ;   
     }
-    public function delete()
+    public function delete() //執行刪除
     {
         echo view("Article/Delete") ;
         $id = session() -> get("id");
@@ -99,5 +98,20 @@ class Article extends BaseController
             throw new PageNotFoundException("此文章編號:$id"."不存在，請再次確認");
         }
         return $artical ;
+    }
+    private function sendTestMail()
+    {
+        $email  = \Config\Services::email();
+        $email ->setTo("a250031452@yahoo.com.tw");
+        $email -> setsubject("Test from Ci4");
+        $email -> setMessage("Hello from u7_Ci_SMTP");
+        if ($email -> send()) 
+        {
+            echo "mail sent" ;
+        }
+        else
+        {
+            echo "Mail nooooooooooooooooooo sent";
+        }
     }
 }

@@ -41,4 +41,37 @@ class Validation extends BaseConfig
     // --------------------------------------------------------------------
     // Rules
     // --------------------------------------------------------------------
+    public $registration =  //shield的驗證
+    [
+        'first_name'=> [
+            "label"=> "First name",
+            "rules"=> [
+                "required"
+            ]
+        ],
+        'email' => [
+            'label' => 'Auth.email',
+            'rules' => [
+                'required',
+                'max_length[254]',
+                'valid_email',
+                'is_unique[auth_identities.secret]',
+            ],
+        ],
+        'password' => [
+            'label' => 'Auth.password',
+            'rules' => [
+                    'required',
+                    'max_byte[72]',
+                    //'strong_password[]',
+                ],
+            'errors' => [
+                'max_byte' => 'Auth.errorPasswordTooLongBytes'
+            ]
+        ],
+        'password_confirm' => [
+            'label' => 'Auth.passwordConfirm',
+            'rules' => 'required|matches[password]',
+        ],
+    ];
 }

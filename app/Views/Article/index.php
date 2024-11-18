@@ -32,7 +32,27 @@
         session() ->set("DeleteSuccess",null);
     }   
  ?>
+  <!--------------------------------------------------->
+<!--ChangePWSuccess Section-->
+<?php 
+    if (auth()->loggedIn())
+        $user=auth()->user()->first_name;
+    else $user= "";
+    if (session() -> get("ChangePWSuccess")!=null) 
+    {
+        //$id = session()->get("DeleteSuccess"); 
+        echo "使用者 "."$user"."修改密碼成功，請於下次登入使用新密碼" ;
+        session() ->set("ChangePWSuccess",null);
+    }   
+ ?>
 <!--------------------------------------------------->
+<!--Login、out-->
+<?php if (auth()->loggedIn()): ?>
+    <p>你好，<?= auth()->user()->first_name ?></p>
+    <a href="<?= url_to("logout") ?>" >登出</a>
+<?php else: ?>
+    <a href="<?= url_to("login") ?>" >點擊登入</a>
+<?php endif; ?>
 <!--List out all data-->
 <?php foreach ($data as $d) : ?>
     <h1> 
