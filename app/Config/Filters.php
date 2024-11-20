@@ -34,6 +34,7 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
+        'login'         => \App\Filters\Login::class
     ];
 
     /**
@@ -70,7 +71,7 @@ class Filters extends BaseFilters
     public array $globals = [
         'before' => [
             // 'honeypot',
-            // 'csrf',
+             'csrf',
             // 'invalidchars',
         ],
         'after' => [
@@ -103,5 +104,9 @@ class Filters extends BaseFilters
      *
      * @var array<string, array<string, list<string>>>
      */
-    public array $filters = [];
+    public array $filters = [
+        'login' => [
+            'before'=>[ "article(/*)?"] //本來是"article/" 這樣做會不包含article 如果加上 (/*)?  這樣連首頁也會被登入Filter
+        ]
+    ];
 }
