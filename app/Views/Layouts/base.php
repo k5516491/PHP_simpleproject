@@ -6,6 +6,35 @@
 </style>
 </head>
 <body>
+<!--NavBar-->
+<?php if (auth()->loggedIn()): ?> 
+<p>你好，<?= auth()->user()->first_name ?></p>
+<?php endif; ?>
+<nav>
+  <a href="<?= url_to("/") ?>" >首頁</a>
+  <?php if (auth()->loggedIn()): ?>
+    <?php if (auth()->user()->inGroup("admin")): ?>
+        <a href="<?= url_to("admin/user") ?>" >使用者</a>
+    <?php endif; ?>
+    
+    <a href="<?= url_to("logout") ?>" >登出</a>
+  <?php else: ?>
+      <a href="<?= url_to("login") ?>" >點擊登入</a>
+  <?php endif; ?>
+</nav>  
+<!--End of NavBar-->
+<?php if (session()->has("error")): ?>
+
+    <?= "沒有權限訪問此頁面" ?>
+<?php endif; ?>
+<?php 
+    if (session() -> get("errors")!=null) 
+    {
+      $s = session()->get("errors");
+        echo $s[0] ;
+        session() ->set("errors",null);
+    }   
+ ?>
 
 <?= $this->renderSection("content"); ?>
 

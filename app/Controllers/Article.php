@@ -5,7 +5,8 @@ use App\Models\ArticleModel;
 //use codeigniter\Exceptions\PageNotFoundException;
 use App\Entities\ArticleEntity;
 use CodeIgniter\Exceptions\PageNotFoundException;
-
+use RuntimeException;
+use finfo;
 class Article extends BaseController
 {
     private ArticleModel $model;
@@ -20,8 +21,8 @@ class Article extends BaseController
         {
             return redirect() -> to("set-password")-> with("UpdatePWBy_MagicLogin","請變更為新密碼") ; 
         }
-        $data = $this->model-> findall();
-        return view("Article/index",["data"=>$data]);
+        $data = $this->model-> paginate(3);
+        return view("Article/index",["data"=>$data, "pager"=>$this->model->pager] );
     }
     public function show($id)  //進入編輯頁面
     {
@@ -61,6 +62,11 @@ class Article extends BaseController
             session() ->set("DeletedID","$id"); //顯示欲刪除的id
             return redirect() -> to("article/delete");
         }
+        if(isset(($_POST["But_Image"])))
+        {
+            session() ->set("ImageID","$id"); //顯示欲新增圖片的id
+            return redirect() -> to("article/Image");
+        }
         
         $artical->fill($this->request->getPost());// fill是Entity裡的Function，會自動轉換得到的資料進obj
         if(!$artical->haschanged()) //資料沒有更動的話使用下面save會error，所以須使用haschanged()先檢查
@@ -88,6 +94,64 @@ class Article extends BaseController
         else if (isset(($_POST["cancel"])))
         {
             return redirect() -> to("article/Update/$id");
+        }
+    }
+    public function Image() //顯示圖片上傳頁面
+    {
+        echo view("Article/Image/new") ;
+        $id = session() -> get("id");
+        
+    }
+    public function ImageCreate() //圖片上傳
+    {
+        //echo view("Article/Image/new") ;
+        $id = session() -> get("id");
+        $article = $this->Showor404($id);
+        $file = $this->request->getFile("image");
+        if( ! $file->isValid()) {
+            $error_code = $file->getError();
+            if ( $error_code === UPLOAD_ERR_NO_FILE) {
+                return redirect() -> back() -> with("errors",["尚未選取檔案"]) ;
+        }
+        throw new RuntimeException($file->getErrorString(). " ". $error_code );
+        
+        }
+        if(! in_array($file->getMimeType(), ["image/png", "image/jpg", "image/jpeg"])) { //檢查檔案規格
+            return redirect() -> back() -> with("errors",["檔案不是規定的圖檔:jpg、jpeg、PNG"]) ;
+        }
+        if($file->getSizeByUnit("mb")>2) {//檢查檔案大小
+            return redirect() -> back() -> with("errors",["檔案太大了"]) ;
+        }
+        //dd($file->getRealPath()); //可以看上傳的圖片暫存位置
+        $path = $file->store("articleImage"); //store裡面的括號是存放圖片資料夾名字，沒有的話會自動建立
+        $article->image = $file->getName();
+        $this->model->protect(false)->save($article);
+        return redirect() -> to("article/Update/$id") -> with("ImageUploadsuccess","圖片上傳成功") ;
+    }
+    public function ImageDelete() {
+        $id = session() -> get("id");
+        $article = $this->Showor404($id);
+        $path = WRITEPATH . "uploads/articleImage/". $article->image ;
+        if( is_file( $path ) ) {
+            unlink( $path );
+        }
+        $article->image = NULL ;
+        $this->model->protect(false)->save($article);
+        return redirect() -> to("article/Update/$id") -> with("ImageDeletesuccess","圖片刪除成功") ;
+    }
+    public function showImage()
+    {
+        $id = session() -> get("id");
+        $article = $this->Showor404($id);
+        if($article->image) {
+            $path = WRITEPATH . "uploads/articleImage/". $article->image ;
+            $finfo = new finfo(FILEINFO_MIME);
+            $type = $finfo ->file($path);
+
+            header("Content-Type: $type");
+            header("Content-Length: ".filesize($path));
+            readfile($path);
+            exit; //剛剛有讀檔這邊要close
         }
     }
     private function Showor404($id)

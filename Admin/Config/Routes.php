@@ -6,7 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 //service('admin')->routes($routes); //for shield
 //$routes->setAutoRoute(true);
-$routes->group("admin", ["namespace"=> "Admin\Controllers", "filter"=> "session"], function (RouteCollection $routes) {
+$routes->group("admin", ["namespace"=> "Admin\Controllers", "filter"=> "group:Admin"], function (RouteCollection $routes) {
     $routes->get("user","User::index");
 
 });

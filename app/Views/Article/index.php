@@ -23,6 +23,16 @@
     }   
  ?>
  <!--------------------------------------------------->
+<!--ImageUploadsuccess Section-->
+<?php 
+    if (session() -> get("ImageUploadsuccess")!=null) 
+    {
+        $id = session()->get("ImageUploadsuccess"); 
+        echo $id ;
+        session() ->set("ImageUploadsuccess",null);
+    }   
+ ?>
+ <!--------------------------------------------------->
 <!--DeleteSuccess Section-->
 <?php 
     if (session() -> get("DeleteSuccess")!=null) 
@@ -46,13 +56,9 @@
     }   
  ?>
 <!--------------------------------------------------->
-<!--Login、out-->
-<?php if (auth()->loggedIn()): ?>
-    <p>你好，<?= auth()->user()->first_name ?></p>
-    <a href="<?= url_to("logout") ?>" >登出</a>
-<?php else: ?>
-    <a href="<?= url_to("login") ?>" >點擊登入</a>
-<?php endif; ?>
+
+<!--------------------------------------------------->
+
 <!--List out all data-->
 <?php foreach ($data as $d) : ?>
     <h1> 
@@ -62,6 +68,7 @@
     <p> <?= esc($d->Content) ?></p>
 <?Php endforeach; ?>
 <!--------------------------------------------------->
+<?= $pager -> Links() ?>
 <a href="<?= url_to("Article::create") ?>">新增一篇新文章</a>
 
 <?= $this -> endsection() ?> 

@@ -1,11 +1,11 @@
-<?php
+<?php //最原始的Model作法範例
 require_once appRoot."\Libraries\Database.php";
 class StudentModel extends \CodeIgniter\Controller
 {
     private $db ;
     public function __construct()
     {
-        $this-> db = new Database;
+        $this-> db = new Database; //對應一開始的require_once Database.php
     }
     public function get_StudentList() //獲取當前student資料表資料
     {
