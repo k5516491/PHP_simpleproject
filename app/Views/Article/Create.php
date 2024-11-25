@@ -2,7 +2,7 @@
 <?= $this -> section("content") ?> 
 <title>文章上傳系統</title>
 <!--------------------------------------------------->
-<!--errors Section-->
+<!--CreatErrors Section-->
 <?php 
         if (session() -> get("errors")!=null) : 
                 echo "上傳失敗，","<br>" ;
@@ -11,8 +11,7 @@
                 endforeach; 
         session() ->set("errors",null);
         echo "<br>";
-        endif; 
-?>
+        endif; ?>
 <!--------------------------------------------------->
 <?= form_open("Article/create") ?>
         <label for="title">文章標題</label>

@@ -1,15 +1,13 @@
 <?= $this -> extend("layouts/base") ?>
 <?= $this -> section("content") ?> 
 <title>所有文章</title>
+
 <!--------------------------------------------------->
-<!--AddSuccess Section-->
+<!--CreateSuccess Section-->
 <?php 
-    if (session() -> get("success")!=null) 
+    if (session()->has("CreateSuccess")) //暫時關閉，因為都英文
     {
-        /*$id = session()->get("NewestID"); 
-        echo "編號:".$id. "號文章新增成功!!<br>" ;*/
-        echo "文章新增成功!!<br>" ;
-        session() ->set("success",null);
+        echo session("CreateSuccess");
     }   
  ?>
 <!--------------------------------------------------->
@@ -63,12 +61,16 @@
 <?php foreach ($data as $d) : ?>
     <h1> 
         <!--點擊該Title進入編輯頁面-->
-        <a href = "/article/Update/<?=$d->id?>"><?= "編號".$d->id."_".esc($d->Title)?></a>
-    </h1> 
-    <p> <?= esc($d->Content) ?></p>
+        <a href = "/article/Update/<?=$d->id?>"><button>
+            <?= $d->id."號文章: ".esc($d->Title)?></button>
+            
+        </a>
+    </h1>
+    <p>內文: <?= esc($d->Content) ?></p>
+    <p>作者_<?= esc($d->first_name) ?></p>
 <?Php endforeach; ?>
 <!--------------------------------------------------->
-<?= $pager -> Links() ?>
+<?= $pager -> simpleLinks() ?>
 <a href="<?= url_to("Article::create") ?>">新增一篇新文章</a>
 
 <?= $this -> endsection() ?> 

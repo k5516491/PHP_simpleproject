@@ -106,7 +106,7 @@ class Filters extends BaseFilters
      */
     public array $filters = [
         'login' => [
-            'before'=>[ "article(/*)?"] //本來是"article/" 這樣做會不包含article 如果加上 (/*)?  這樣連首頁也會被登入Filter
+            'before'=>['article/*'] //本來是"article/" 這樣做會不包含article 如果加上 (/*)?  這樣連首頁也會被登入Filter 後續更:not works
         ]
     ];
 }

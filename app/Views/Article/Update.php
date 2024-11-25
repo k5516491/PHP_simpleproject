@@ -1,12 +1,27 @@
 <?= $this -> extend("layouts/base") ?>
 <?= $this -> section("content") ?> 
 <title>文章修改系統</title>
-<?php if($data->image) : ?>
-        <img src="<?= url_to("article/Image/show") ?>">
-        <a href="<?= url_to("article/Image/delete") ?>"> <button name="But_DelImage">刪除圖片</button> </a>
-<?php else: ?>
-        <a href="<?= url_to("Article::ImageCreate") ?>"> <button name="But_Image">上傳圖片</button> </a>
+<?php if($data->isOner() ||auth()->user()->can("article.update")) :?>
+        <?php if($data->image) : ?>
+                <img src="<?= url_to("article/Image/show") ?>">
+                <a href="<?= url_to("article/Image/delete") ?>"> <button name="But_DelImage">刪除圖片</button> </a>
+        <?php else: ?>
+                <a href="<?= url_to("article/Image/Create") ?>"> <button name="But_Image">上傳圖片</button> </a>
+        <?php endif ?>
 <?php endif ?>
+
+<?= form_open("Article/Update") ?>
+<label for="title">文章標題</label>
+        <input type="text" id="Title" name="Title" value="<?= $data->Title?>" ><!--value= old() -->
+
+        <label for="content">內容</label>
+        <textarea id="content" name="Content" ><?= $data->Content?></textarea> <!--TextArea沒有Value old()用法有差 -->
+
+        <?php if($data->isOner() ||
+                auth()->user()->can("article.update")) :?> <!--這裡使用Group Permission，需使用can()而不是haspermission() -->
+                <button >修改文章</button>
+                <a href="<?= url_to("Article::Delete") ?>"> <button name="But_Delete">刪除文章</button> </a>
+        <?php endif ?>
 <!--------------------------------------------------->
 <!--errors Section-->
 <?php 
@@ -29,17 +44,6 @@
     }  
 ?>
 
-<?= form_open("Article/Update") ?>
-<label for="title">文章標題</label>
-        <input type="text" id="Title" name="Title" value="<?= $data->Title?>" ><!--value= old() -->
-
-        <label for="content">內容</label>
-        <textarea id="content" name="Content" ><?= $data->Content?></textarea> <!--TextArea沒有Value old()用法有差 -->
-
-        <button >修改文章</button>
-        
-        <a href="<?= url_to("Article::Delete") ?>"> <button name="But_Delete">刪除文章</button> </a>
-        
 <?= $this -> endsection() ?> 
 
 

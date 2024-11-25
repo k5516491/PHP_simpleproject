@@ -21,7 +21,10 @@ class Article extends BaseController
         {
             return redirect() -> to("set-password")-> with("UpdatePWBy_MagicLogin","請變更為新密碼") ; 
         }
-        $data = $this->model-> paginate(3);
+        $data = $this->model->
+            select("article.*, users.first_name")->
+            join("users","users.id = article.user_id")->
+            paginate(5);
         return view("Article/index",["data"=>$data, "pager"=>$this->model->pager] );
     }
     public function show($id)  //進入編輯頁面
@@ -32,33 +35,43 @@ class Article extends BaseController
     }
     public function create() //新增一篇文章
     {
-        
-        echo view("Article/Create") ;
+        //-----新版本-entity obj用法
+        echo view("Article/Create") ; 
         if($this->request->getPost() != null) //按按鈕才判斷
         {
-            $aut = $this->model->insert($this->request->getPost()); //insert Function，帶驗證
-            if($aut) //驗證成功，寫入資料庫後提醒使用者剛剛輸入哪一筆資料
+            $artical= $this->model->save($this->request->getPost()); //因為創建一定有新值，所以可以直接save而不用先haschanged()
+            if($artical) //驗證成功，寫入資料庫
             {
-                $data = $this->request->getPost("Title");
-                session() ->set("success","$data");
-                return redirect() ->to("article/index"); //新增完資料跳回顯示頁面
-                
+                return redirect() ->to("article/index")->with("CreateSuccess","文章新增成功"); //新增完資料跳回主頁
+            }
+            return redirect() -> to(current_url())
+            -> with("errors",$this->model->errors())
+            ->withInput() ;  //WithInput可以記錄使用者輸入過的資料，使用者不須全部重打  
+        }
+        /*echo view("Article/Create") ; //舊版本-model array用法
+        if($this->request->getPost() != null) //按按鈕才判斷
+        {
+            $text =$this->request->getPost();
+            $text['user_id']= auth()->user()->id;
+            $aut = $this->model->insert($text); //insert Function，帶驗證 
+            if($aut) //驗證成功，寫入資料庫
+            {
+                return redirect() ->to("article/index")->with("CreateSuccess","文章新增成功"); //新增完資料跳回主頁
             }
             //驗證失敗跳錯誤訊息，同時跳回顯示頁面
             return redirect() -> to(current_url())
             -> with("errors",$this->model->errors())
-            ->withInput() ;  //WithInput可以記錄使用者輸入過的資料，使用者不須全部重打
+            ->withInput() ;  //WithInput可以記錄使用者輸入過的資料，使用者不須全部重打  
         }
-
+        */
     }
     public function Update() //修改操作+刪除判斷
     {
         $id = session() -> get("id");
-        $artical = $this->Showor404($id);
+        $artical = $this->Showor404($id); //確認該文章存在後從Entity拿取資料到$artical
 
         if(isset(($_POST["But_Delete"])))
         {
-            //return view("Article/Delete",["data"=>$artical]);
             session() ->set("DeletedID","$id"); //顯示欲刪除的id
             return redirect() -> to("article/delete");
         }

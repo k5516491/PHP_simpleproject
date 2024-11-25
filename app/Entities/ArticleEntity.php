@@ -7,5 +7,9 @@ use CodeIgniter\Entity\Entity ;
 
 class ArticleEntity extends Entity
 {
-
+    public function isOner()
+    {
+        //$this == Article Table , auth() == Users Table
+        return $this->user_id == auth()->user()->id;
+    }
 }

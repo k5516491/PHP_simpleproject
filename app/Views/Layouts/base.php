@@ -8,7 +8,7 @@
 <body>
 <!--NavBar-->
 <?php if (auth()->loggedIn()): ?> 
-<p>你好，<?= auth()->user()->first_name ?></p>
+<h2>你好，<?= auth()->user()->first_name ?></h2>
 <?php endif; ?>
 <nav>
   <a href="<?= url_to("/") ?>" >首頁</a>
@@ -23,10 +23,18 @@
   <?php endif; ?>
 </nav>  
 <!--End of NavBar-->
+<?php 
+    if (session()->has("fail")) 
+    {
+        echo session("fail");
+    }   
+ ?>
+ <!--沒有權限訪問-->
 <?php if (session()->has("error")): ?>
 
     <?= "沒有權限訪問此頁面" ?>
 <?php endif; ?>
+<!--沒有權限訪問-->
 <?php 
     if (session() -> get("errors")!=null) 
     {

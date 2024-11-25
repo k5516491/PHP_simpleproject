@@ -4,6 +4,15 @@
 
 
 <?= $this->section("content"); ?>
+<table>
+<thead>
+    <tr>
+      <th>Month</th>
+      <th>Savings</th>
+    </tr>
+</thead>
+</table>
+
 
 <form method="post">
     <div class="container">
